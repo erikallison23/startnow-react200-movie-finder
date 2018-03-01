@@ -7,7 +7,7 @@ export default function searchReducer(state = defaultState, action) {
 
     switch (type) {
       
-        case 'MOVIE_SEARCH_FULFILLED': {
+        case 'MOVIE_LOOKUP_FULFILLED': {
          return {
            ...state,
            movieData: payload

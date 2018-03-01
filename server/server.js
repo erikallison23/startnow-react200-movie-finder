@@ -14,14 +14,16 @@ app.use(express.static('public'));
 
 app.get("/mSearch/:input", (req, res) => {
     var input = req.params.input;
+    
     axios.get(`http://www.omdbapi.com/?s=${input}&apikey=8730e0e`)
         .then(response => {
             axios.all(response.data.Search.map((film, index) => {
-                return axios.get(`http://www.omdbapi.com/?s=${film.imbdID}&apikey=8730e0e`)
+                return axios.get(`http://www.omdbapi.com/?i=${film.imdbID}&apikey=8730e0e`)
                     .then(response2 => {
                         return response2.data
                     })
             })).then(fullDetails => {
+                console.log('input', fullDetails)
                 res.send(fullDetails)
             })
         })

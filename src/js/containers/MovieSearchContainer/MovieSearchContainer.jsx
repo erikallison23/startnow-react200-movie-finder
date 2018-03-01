@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import {
  movieLookup,
 } from './MovieSearchAction'
@@ -21,7 +21,7 @@ this.handleSearchBtn = this.handleSearchBtn.bind(this);
 
   render() {
     const {movieData} = this.props
-    console.log(movieData);
+    console.log('balls', movieData);
     return (
 
       < div >
@@ -44,14 +44,17 @@ this.handleSearchBtn = this.handleSearchBtn.bind(this);
           </div>
           
         {
-          movieData.Search && movieData.Search.map(movieItem => {
-              console.log(movieData);
-          <div className="card bg my-2 col-12" id='jumbo'>
+          movieData.length>0 && movieData.map((movieItem, index) => {
+              console.log("daddy", movieItem);
+              return (
+
+            
+          <div key={movieItem.imdbID} className="card bg my-2 col-12" id='jumbo'>
             <div className="card-body">
               <div className="row justify-content-center">
                 {/* POSTER */}
                 <div className="col-lg-3 float-left">
-                  <img className="text-center img-fluid max-width: 80% height: auto rounded mx-auto p-3" src='https://cdn.traileraddict.com/content/20th-century-fox/dude.jpg' />
+                  <img className="text-center img-fluid max-width: 80% height: auto rounded mx-auto p-3" src={movieItem.Poster}  />
                 </div>
                 {/* MOVIE TEXT INFO */}
                 <div className="col-lg-9 float-right">
@@ -59,23 +62,22 @@ this.handleSearchBtn = this.handleSearchBtn.bind(this);
                     <h2 className="pb-4 mb-0">{movieItem.Title}</h2>
                   </div>
                   <div>
-                    <h6 className="pb-4 mb-0">2000</h6>
+                    <h6 className="pb-4 mb-0">{movieItem.Year}</h6>
                   </div>
                   <div className="align-self-center">
                     <textbox>
-                      Jess and Chester go on a shibby adventure to save the universe from destructive aliens,
-                      and also find their car.
+                      {movieItem.Plot}
                     </textbox>
                   </div>
                   <span className="input-group-btn">
-                    <button className="btn btn-primary"  id='moreInfo'>More Info</button>
+                   <Link to={`/movie/${index}`} className='btn btn-primary'> More Info</Link>
                   </span>
 
                 </div>
               </div>
             </div>
           </div>
-           })}
+             )})}
 
         </div>
       </div>
