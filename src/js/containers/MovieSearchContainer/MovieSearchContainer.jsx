@@ -37,7 +37,7 @@ this.handleSearchBtn = this.handleSearchBtn.bind(this);
               <div className="input-group">
                 <input id="videoSearch" type="text" className="form-control" placeholder="Movie search..." />
                 <span className="input-group-btn">
-                  <button onClick={this.handleSearchBtn} className="btn btn-primary">Search</button>
+                  <button onClick={this.handleSearchBtn} className="btn btn-warning">Search</button>
                 </span>
               </div>
             </div>
@@ -49,28 +49,28 @@ this.handleSearchBtn = this.handleSearchBtn.bind(this);
               return (
 
             
-          <div key={movieItem.imdbID} className="card bg my-2 col-12" id='jumbo'>
+          <div key={movieItem.imdbID} className="card bg my-2 col-12" id='jumboBottom'>
             <div className="card-body">
               <div className="row justify-content-center">
                 {/* POSTER */}
-                <div className="col-lg-3 float-left">
-                  <img className="text-center img-fluid max-width: 80% height: auto rounded mx-auto p-3" src={movieItem.Poster}  />
+                <div className="col-lg-3 float-left" id='poster'>
+                  <img className="text-center img-fluid max-width: 80% height: auto rounded mx-auto p-3" src={movieItem.Poster} id='posterInsdie' />
                 </div>
                 {/* MOVIE TEXT INFO */}
-                <div className="col-lg-9 float-right">
+                <div className="col-lg-9 float-right" id='content'>
                   <div className="align-self-center mt-3">
                     <h2 className="pb-4 mb-0">{movieItem.Title}</h2>
                   </div>
-                  <div>
-                    <h6 className="pb-4 mb-0">{movieItem.Year}</h6>
+                  <div id='yearWrap'>
+                    <h6 className="pb-4 mb-0" id='year'>{movieItem.Year}</h6>
                   </div>
-                  <div className="align-self-center">
-                    <textbox>
+                  <div className="align-self-center" id='textBox'>
+                    <textbox id='hiddenText'>
                       {movieItem.Plot}
                     </textbox>
                   </div>
-                  <span className="input-group-btn">
-                   <Link to={`/movie/${index}`} className='btn btn-primary'> More Info</Link>
+                  <span className="input-group-btn" id='wrapBtn'>
+                   <Link to={`/movie/${index}`} className='btn btn-warning' id='searchBtn'> More Info</Link>
                   </span>
 
                 </div>

@@ -3,13 +3,81 @@ body {
   background: url('http://www.zingerbug.com/Backgrounds/background_images/white_parchment_paper_wallpaper_texture_seamless.jpg');
 }
 
+#textBox {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#textBox #hiddenText {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 1s linear;
+}
+
+#jumboBottom:hover #hiddenText{
+    visibility: visible;
+    opacity: 1;
+}
+
+#wrapBtn #searchBtn {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 1s linear;
+}
+
+#jumboBottom:hover #searchBtn{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#yearWrap #year {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 1s linear;
+}
+
+#jumboBottom:hover #year{
+    visibility: visible;
+    opacity: 1;
+}
+/*  #poster #posterInside {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 1s linear;
+}
+
+#jumboBottom:hover #poster{
+    visibility: visible;
+    opacity: 1; 
+} */
+.btn.btn-warning {
+  border-style: solid;
+  border-color: white;
+  color: white;
+  z-index:-1;
+  -webkit-box-shadow:0 0 3px rgba(0,0,0,0.8);
+  -moz-box-shadow:0 0 3px rgba(0,0,0,0.8);
+  box-shadow:0 0 3px rgba(0,0,0,0.8);
+  top:0;
+  bottom:0;
+  left:10px;
+  right:10px;
+  -moz-border-radius:100px / 10px;
+  border-radius:100px / 10px;
+}
 #jumbo {
   position: relative;
-  //background: url('https://static.pexels.com/photos/301599/pexels-photo-301599.jpeg');
-  background: rgb(31, 30, 29);
-  color: rgb(230, 230, 230);
+  background: #200808;
+  color: #e8dfd2;
   font-family: 'Crinsom Text'; 
- // background: rgb(247, 247, 195);
+  margin-bottom: 50px;
+  margin-top: 50px;
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+
+
 }
 
 #jumbo:before, #jumbo:after {
@@ -21,7 +89,7 @@ body {
   width: 50%;
   top: 80%;
   max-width:300px;
-  background: #777;
+  background: #1d0101;
   -webkit-box-shadow: 0 35px 20px #777;
   -moz-box-shadow: 0 35px 20px #777;
   box-shadow: 0 35px 20px #777;
@@ -33,6 +101,7 @@ body {
 }
 #jumbo:after
 {
+  background:#1d0101;
   -webkit-transform: rotate(8deg);
   -moz-transform: rotate(8deg);
   -o-transform: rotate(8deg);
@@ -46,7 +115,7 @@ body {
 {
   background: url('http://ak6.picdn.net/shutterstock/videos/4043056/thumb/1.jpg');
   background-size: cover;
-  color: white;
+  color: #e8dfd2;
   font-size: 10em;
   font-family: 'Crinsom Text'; 
   font-style: italic;
@@ -79,5 +148,78 @@ body {
         -ms-transform:skew(8deg) rotate(3deg);
          -o-transform:skew(8deg) rotate(3deg);
             transform:skew(8deg) rotate(3deg);
+}
+
+#poster {
+border-style: inset;
+border-color: rgb(255, 255, 255);
+position: auto;
+padding: -30px;
+background: #400e00;
+}
+
+#content {
+  padding-left: 30px;
+}
+
+#jumboBottom
+{
+  opacity: 0.85;
+  transition: transform 1.5s;
+  position: relative;
+  background: #200808;
+  color: #e8dfd2;
+  font-family: 'Crinsom Text'; 
+  margin-bottom: 50px;
+  margin-top: 50px;
+ position:relative;
+ -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+         box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+#jumboBottom:before, #jumboBottom:after
+{
+	content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+#jumboBottom:after
+{
+	right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+#jumboBottom:hover {
+  opacity: 1;
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 20px rgb(175, 174, 174);
+    filter:progid:DXImageTransform.Microsoft.Glow(Color=black,Strength=20);
+}
+
+#videoSearch {
+outline-style:none;
+box-shadow:none;
+border-color:transparent;
+border: solid;
+border-style: inset;
 }
 

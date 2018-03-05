@@ -15,7 +15,7 @@ class MovieDetailContainer extends React.Component {
         <div className="container">
           <div>
             <h1>Movie Details</h1>
-            <Link to='/' className='btn btn-primary'> Back to Search </Link>
+            <Link to='/' className='btn btn-warning'> Back to Search </Link>
           </div>
 
 
@@ -24,7 +24,7 @@ class MovieDetailContainer extends React.Component {
               <div className="row justify-content-center">
 
                 {/* POSTER */}
-                <div className="col-lg-3 float-left">
+                <div className="col-lg-3 float-left" id='poster2'>
                   <img className="text-center img-fluid max-width: 80% height: auto rounded mx-auto p-3" src={movieData.Poster} />
                 </div>
 
